@@ -32,10 +32,8 @@ jobs:
         run: bundle exec jekyll build
 
       # 5. Deploy to gh-pages
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v6
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: gh-pages
-          force_orphan: true
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./_site
