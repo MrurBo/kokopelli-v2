@@ -3,39 +3,46 @@ name: Build and Deploy Jekyll Site
 on:
   push:
     branches:
-      - main # Change this if your default branch is different
-  workflow_dispatch: # Allows manual trigger from Actions tab
+      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       # 1. Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # needed for pushing branches
 
       # 2. Set up Ruby
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2 # Adjust to your Ruby version
+          ruby-version: 3.2
           bundler-cache: true
 
       # 3. Install dependencies
       - name: Install dependencies
         run: |
           gem install jekyll bundler
+          bundle lock --add-platform x86_64-linux
           bundle install
 
       # 4. Build the site
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
-      # 5. Deploy to gh-pages
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./_site
-            publish_branch: gh-pages
-            force_orphan: true
+      # 5. Push _site to gh-pages branch
+      - name: Push to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan gh-pages
+          git --work-tree=_site add --all
+          git --work-tree=_site commit -m "Deploy site via GitHub Actions"
+          git push origin gh-pages --force
