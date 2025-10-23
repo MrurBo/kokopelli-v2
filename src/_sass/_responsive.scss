@@ -1,0 +1,13 @@
+@media (width < 1000px) {
+  body {
+    font-size: x-small;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar {
+    width: 80%;
+  }
+}

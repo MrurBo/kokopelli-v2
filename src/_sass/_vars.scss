@@ -1,0 +1,11 @@
+:root {
+  --bg: #edebe2;
+  --bg-muted: oklab(from var(--bg) calc(l - 0.05) a b);
+  --ink: #181818;
+  --muted: #666;
+  --brand: #6D5F52;
+  --card: #fff;
+  --chip: #e9e3cf;
+  --radius: 20px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}

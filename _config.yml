@@ -1,0 +1,44 @@
+title: Kokopelli
+description: Kokopelli Plant Medicine
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://kokopelli.ie" # your domain name
+description: "Kokopelli Plant Medicine Rapé and Accessory Shop"
+ogimage: "https://placehold.co/1200x630"
+
+author:
+    name: Rytis Nefiodovas
+    email: rytisnefiodovas@icloud.com
+
+
+# Build settings
+markdown: kramdown
+source: src
+
+plugins:
+    - jekyll-feed
+    - jekyll-seo-tag
+    - jekyll-sitemap
+    - jekyll-paginate-v2
+    - jekyll-sass-converter
+
+pagination:
+    enabled: true
+    per_page: 10
+    permalink: "page/:num/" # or 'page/:num/' depending on your URL style
+
+sass:
+    style: compressed
+    sass_dir: _sass
+collections:
+  products:
+    output: true
+    permalink: /products/:name/
+    template: product
+# Exclude files from build
+exclude:
+    - Gemfile
+    - Gemfile.lock
+
+# Optional: SEO and social sharing
+seo:
+    type: "website"
