@@ -3,8 +3,8 @@ name: Build and Deploy Jekyll Site
 on:
   push:
     branches:
-      - main  # Change this if your default branch is different
-  workflow_dispatch:  # Allows manual trigger from Actions tab
+      - main # Change this if your default branch is different
+  workflow_dispatch: # Allows manual trigger from Actions tab
 
 jobs:
   build-and-deploy:
@@ -18,7 +18,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2  # Adjust to your Ruby version
+          ruby-version: 3.2 # Adjust to your Ruby version
           bundler-cache: true
 
       # 3. Install dependencies
@@ -32,8 +32,10 @@ jobs:
         run: bundle exec jekyll build
 
       # 5. Deploy to gh-pages
-      - name: Deploy
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: ./_site
+            publish_branch: gh-pages
+            force_orphan: true
