@@ -36,7 +36,9 @@ jobs:
 
       # 4. Build the site
       - name: Build Jekyll site
-        run: bundle exec jekyll build
+        run: |
+          bundle exec jekyll build
+          cp ./CNAME ./_site/CNAME
 
       # 5. Push _site to gh-pages branch
       - name: Push to gh-pages

@@ -34,11 +34,3 @@ collections:
     output: true
     permalink: /products/:name/
     template: product
-# Exclude files from build
-exclude:
-    - Gemfile
-    - Gemfile.lock
-
-# Optional: SEO and social sharing
-seo:
-    type: "website"
