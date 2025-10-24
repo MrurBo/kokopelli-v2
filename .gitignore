@@ -2,4 +2,4 @@ logs/
 _site/
 src/.jekyll-cache/
 test.bat/
-# Gemfile.lock
+Gemfile.lock
