@@ -1,16 +1,15 @@
 title: Kokopelli
 description: Kokopelli Plant Medicine
-baseurl: "" 
-url: "https://kokopelli.ie" 
-description: "Kokopelli Plant Medicine Rapé and Accessory Shop"
-ogimage: "https://placehold.co/1200x630"
+baseurl: ''
+url: 'https://kokopelli.ie'
+ogimage: 'https://placehold.co/1200x630'
+
+development: false
 
 author:
     name: Rytis Nefiodovas
     email: rytisnefiodovas@icloud.com
 
-
-# Build settings
 markdown: kramdown
 source: src
 
@@ -24,13 +23,17 @@ plugins:
 pagination:
     enabled: true
     per_page: 10
-    permalink: "page/:num/" # or 'page/:num/' depending on your URL style
+    permalink: 'page/:num/'
 
 sass:
     style: compressed
     sass_dir: _sass
+
 collections:
-  products:
-    output: true
-    permalink: /products/:name/
-    template: product
+    products:
+        output: true
+        permalink: /products/:name/
+        template: product
+    categories:
+        output: false
+        permalink: /category/:name/

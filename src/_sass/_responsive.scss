@@ -1,13 +1,24 @@
 @media (width < 1000px) {
-  body {
-    font-size: x-small;
-  }
+    body {
+        font-size: x-small;
+    }
 
-  .product-list {
-    grid-template-columns: 1fr;
-  }
-  
-  .navbar {
-    width: 80%;
-  }
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        width: 80%;
+    }
+
+    .slide-inner .slide-title {
+        width: 10%;
+    }
+}
+
+@media (width < 2100px) {
+    .navbar,
+    .content {
+        width: 80%;
+    }
 }

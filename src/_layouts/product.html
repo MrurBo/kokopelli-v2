@@ -4,6 +4,9 @@ layout: default
 
 <div class="product-card">
     <h1 class="title">{{page.title}}</h1>
-    <img src="https://placehold.co/256x256" alt="" fetchpriority=high>
+    <picture>
+        <source srcset="/static/{{page.img.src}}.webp" type="image/webp" />
+        <img src="/static/{{page.img.src}}.jpg" alt="{{page.img.alt}}" />
+    </picture>
     <p class="description">{{ content }}</p>
 </div>

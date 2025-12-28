@@ -1,11 +1,17 @@
-:root {
-  --bg: #edebe2;
-  --bg-muted: oklab(from var(--bg) calc(l - 0.05) a b);
-  --ink: #181818;
-  --muted: #666;
-  --brand: #6D5F52;
-  --card: #fff;
-  --chip: #e9e3cf;
-  --radius: 20px;
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-}
+@use 'sass:color';
+
+$bg: #edebe2;
+$bg-muted: color.complement($bg, oklch);
+$ink: #181818;
+$muted: #666;
+$brand: #6d5f52;
+$card: #fff;
+$chip: #e9e3cf;
+
+$radius: 20px;
+$shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+$font-body: 'Inter', system-ui, sans-serif;
+$font-heading: 'Cormorant Garamond', serif;
+$font-size-base: 1rem;
+$font-size-title: 1.5rem;

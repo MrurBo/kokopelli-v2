@@ -1,11 +1,4 @@
 .content {
-  width: 40%;
-  margin: 30px auto 0;
-}
-
-@media (width < 2100px) {
-  .navbar,
-  .content {
-    width: 80%;
-  }
+    width: 40%;
+    margin: 30px auto 0;
 }

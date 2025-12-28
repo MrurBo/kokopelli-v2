@@ -1,9 +1,46 @@
+@use 'vars' as *;
+@use 'layout';
+@use 'mixins';
+@use 'responsive';
+.loadOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: var(--bg);
-  margin: 1%;
+    font-family: $font-body;
+    font-size: $font-size-base;
+    color: $ink;
+    background-color: $bg;
+    margin: 1%;
 }
 
-h1, h2, h3, p, a {
-  color: var(--brand);
+h1,
+h2,
+h3,
+p,
+a {
+    color: var(--brand);
+}
+
+.dev { // fullscreen banner for development mode
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    z-index: 1001;
+    font-size: 2em;
 }

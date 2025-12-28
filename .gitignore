@@ -3,3 +3,6 @@ _site/
 src/.jekyll-cache/
 test.bat/
 Gemfile.lock
+.gem/
+vendor/
+.bundle

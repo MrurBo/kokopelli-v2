@@ -1,8 +1,0 @@
-{
-  "htmlWhitespaceSensitivity": "ignore",
-  "singleQuote": true,
-  "jsxSingleQuote": true,
-  "bracketSameLine": true,
-  "proseWrap": "preserve",
-  "arrowParens": "avoid"
-}

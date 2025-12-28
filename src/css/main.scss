@@ -1,9 +1,11 @@
 ---
 ---
-@use 'vars';
+
 @use 'base';
-@use 'layout';
-@use 'navbar';
-@use 'product';
-@use 'animations';
-@use 'responsive';
+@use 'extra/animations';
+@use 'extra/carrousel';
+@use 'extra/navbar';
+@use 'extra/product';
+#loadOverlay {
+    display: none;
+}
