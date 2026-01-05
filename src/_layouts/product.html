@@ -2,11 +2,5 @@
 layout: default
 ---
 
-<div class="product-card">
-    <h1 class="title">{{page.title}}</h1>
-    <picture>
-        <source srcset="/static/{{page.img.src}}.webp" type="image/webp" />
-        <img src="/static/{{page.img.src}}.jpg" alt="{{page.img.alt}}" />
-    </picture>
-    <p class="description">{{ content }}</p>
-</div>
+{% include product.html title=page.title img=page.img content=content
+price=page.price %}

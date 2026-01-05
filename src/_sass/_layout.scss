@@ -1,4 +1,12 @@
+@use '_vars' as *;
+
 .content {
     width: 40%;
     margin: 30px auto 0;
+}
+
+.cta {
+    background-color: $chip;
+    padding: 1%;
+    border-radius: 10px;
 }

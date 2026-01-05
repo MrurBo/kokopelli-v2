@@ -2,20 +2,10 @@
 layout: default
 ---
 
-<h1>Category: {{ page.category }}</h1>
+<h1>{{ page.title }}</h1>
 
 <ul class="product-list">
-    {% for item in paginator.posts %}
-    <a class="product-card">
-        <h1 class="title">{{item.title}}</h1>
-        <picture>
-            <source srcset="/static/{{item.img.src}}.webp" type="image/webp" />
-            <img src="/static/{{item.img.src}}.jpg" alt="{{item.img.alt}}" />
-        </picture>
-        <p class="description">{{ item.content }}</p>
-    </a>
-
-    {% endfor %}
+    {% for item in paginator.posts %} {% include product.html %} {% endfor %}
 </ul>
 
 <div class="pagination">

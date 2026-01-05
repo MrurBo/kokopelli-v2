@@ -1,3 +1,10 @@
+@media (width < 670px) {
+    .brand-image {
+        width: 100px !important;
+        height: 100px !important;
+    }
+}
+
 @media (width < 1000px) {
     body {
         font-size: x-small;

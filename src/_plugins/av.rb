@@ -2,24 +2,27 @@ module Jekyll
   class AV < Liquid::Tag
     def initialize(tag_name, text, tokens)
       super
-      @src = site.baseurl + "/assets/" + text.strip
-      _check_file_exists("assets/" + text.strip)
-    end
-
-    def _check_file_exists(file_path)
-      full_path = File.join(Dir.pwd, file_path)
-      puts full_path
-      unless File.exist?(full_path)
-        raise "File not found: #{full_path}"
-      end
+      @file = text.strip.delete_prefix('"').delete_suffix('"')
     end
 
     def render(context)
-        <<~HTML
-        <img src="{@src}" alt="Audio Visualizer" />
-        HTML
+      site = context.registers[:site]
+
+      # Public URL (what the browser sees)
+      src = File.join(site.baseurl.to_s, "assets", @file)
+
+      # Optional: check destination instead of source
+      output_path = File.join(site.dest, "assets", @file)
+
+      unless File.exist?(output_path)
+        Jekyll.logger.warn "AV tag:", "file not found in output: #{output_path}"
+      end
+
+      <<~HTML
+        <img src="#{src}" alt="Audio Visualizer" />
+      HTML
     end
   end
 end
 
-Liquid::Template.register_tag('av', Jekyll::AV)
+Liquid::Template.register_tag("av", Jekyll::AV)

@@ -1,0 +1,9 @@
+<div class="product-card">
+    <h1 class="title">{{include.title}} &CenterDot; &euro;{{include.price}}</h1>
+    <picture>
+        <source srcset="/assets/{{include.img.src}}.webp" type="image/webp" />
+        <img src="/assets/{{include.img.src}}.jpg" alt="{{page.img.alt}}" />
+    </picture>
+    <div class="description">{{ include.content }}</div>
+    <a class="cta" href="{{page.contacts.instagram}}">Instagram</a>
+</div>

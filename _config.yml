@@ -4,6 +4,10 @@ baseurl: ''
 url: 'https://kokopelli.ie'
 ogimage: 'https://placehold.co/1200x630'
 
+contacts:
+    instagram: 'https://www.instagram.com/kokopelli_plant_medicine/'
+    whatsapp: '#'
+
 development: false
 
 author:

@@ -3,20 +3,20 @@
     align-items: center;
     justify-content: space-between;
     /* pushes hamburger right */
-    width: 40%;
+    // width: 40%;
     margin: auto;
-    height: 60px;
     border-bottom: 1px solid var(--bg-muted);
     gap: 10px;
     position: relative;
-    /* ⬅️ important */
+
 
     .brand {
         display: flex;
         align-items: center;
         gap: 10px;
+        text-decoration: none;
 
-        img {
+        img.brand-image {
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -25,36 +25,6 @@
         span {
             font-weight: bold;
             font-size: x-large;
-        }
-    }
-}
-
-.hamburger {
-    width: 30px;
-    cursor: pointer;
-    display: block;
-
-    .bar {
-        height: 3px;
-        width: 100%;
-        background-color: var(--brand);
-        margin: 5px 0;
-        transition: 0.3s;
-    }
-
-    &.active {
-        .bar {
-            &:nth-child(1) {
-                transform: rotate(45deg) translate(6px, 6px);
-            }
-
-            &:nth-child(2) {
-                opacity: 0;
-            }
-
-            &:nth-child(3) {
-                transform: rotate(-45deg) translate(6px, -6px);
-            }
         }
     }
 }

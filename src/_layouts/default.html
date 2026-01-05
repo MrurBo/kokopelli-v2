@@ -53,10 +53,9 @@
 
         <link
             rel="icon"
-            href="{{ '/images/favicon.webp' | relative_url }}"
+            href="{{ '/favicon.webp' | relative_url }}"
             type="image/x-icon" />
-        <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}" />
-        </noscript>
+
         <style>
             #loadOverlay {
                 background-color: #edebe2;
@@ -68,27 +67,18 @@
                 z-index: 2000;
             }
         </style>
+        <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}" />
+        </noscript>
+
     </head>
 
     <body>
         <div id="loadOverlay"></div>
         <nav class="navbar">
             <a href="/" class="brand">
-                <img src="https://placehold.co/40x40" alt="" />
-                <span>Kokopelli</span>
+                <img src="/assets/images/logo.webp" alt="" class="brand-image" />
+                <span>Kokopelli Plant Medicine</span>
             </a>
-            <!-- Always visible items in the nav bar -->
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
         </nav>
         <main class="content">
             {{ content }}

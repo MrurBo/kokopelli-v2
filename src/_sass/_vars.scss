@@ -1,7 +1,7 @@
 @use 'sass:color';
 
 $bg: #edebe2;
-$bg-muted: color.complement($bg, oklch);
+$bg-muted: color.complement($bg);
 $ink: #181818;
 $muted: #666;
 $brand: #6d5f52;
